@@ -8,6 +8,27 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Daily Journal</h1>
+    <form action="">
+        <fieldset>
+            <label for="journalDate">Date of entry</label>
+            <input type="date" name="journalDate" id="journalDate">
+            <label for="journalConcepts">Concepts covered</label>
+            <input type="text" name="journalConcepts" id="journalConcepts">
+            <label for="journalEntry">Journal entry</label>
+            <textarea name="journalEntry" id="journalEntry"
+            rows="3" cols="33"></textarea>
+            <label for="journalMood">Mood for the day</label>
+            <select name="journalMood" id="journalMood" >
+                    <option value="Happy">Happy</option>
+                    <option value="Sad">Sad</option>
+                    <option value="Meh">Meh</option>
+                    <option value="FILLED WITH FIERY RAGE">FILLED WITH FIERY RAGE</option>
+                  </select>
+
+        </fieldset>
+
+
+    </form>
 </body>
 </html>
