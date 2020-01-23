@@ -1,32 +1,29 @@
-/*
-    Define the keys and value for a JavaScript object that
-    represents a journal entry about what you learned today
-*/
+const fetchEntries = fetch("http://localhost:8088/entries") // Fetch from the API
+    .then(entries => entries.json())  // Parse as JSON
+    .then(parsedEntries => {
+        renderJournalEntries(parsedEntries);
+    })
 
-const journalEntry = {
 
+
+const entryContainer = document.querySelector(".entryLog");
+
+const makeJournalEntryComponent = (journalEntry) => {
+
+    return `
+        <ul>
+        <li>Date: ${journalEntry.date}</li>
+        <li>Concept: ${journalEntry.concept}</li>
+        <li>Entry: ${journalEntry.entry}</li>
+        <li>Mood: ${journalEntry.mood}</li>
+        <ul>
+    `
+}
+
+const renderJournalEntries = (entries) => {
+    entries.forEach(entry => {
+    entryContainer.innerHTML += makeJournalEntryComponent(entry);
+
+})
 };
 
-const journalEntryObjects = {
-
-};
-
-const journalEntryArrays = {
-
-};
-
-const journalEntryFunctions = {
-
-};
-
-const journalEntries = [];
-
-journalEntries.push(journalEntry);
-journalEntries.push(journalEntryObjects);
-journalEntries.push(journalEntryArrays);
-journalEntries.push(journalEntryFunctions);
-
-
-
-
-console.log("an array with 4 objects inside", journalEntries);
