@@ -1,7 +1,6 @@
 
 const makeJournalEntryComponent = (journalEntry) => {
-
-    return `
+        return `
         <ul>
         <li>Date: ${journalEntry.date}</li>
         <li>Concept: ${journalEntry.concept}</li>
@@ -9,6 +8,9 @@ const makeJournalEntryComponent = (journalEntry) => {
         <li>Mood: ${journalEntry.mood}</li>
         <ul>
     `
-}
+};
+
+
+
 
 export default makeJournalEntryComponent
