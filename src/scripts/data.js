@@ -13,7 +13,7 @@ const API = {
         const newJournalEntry = makeJournal.makeJournalEntryObject(journalDate.value, journalConcepts.value, journalEntry.value, journalMood.value)
         if (journalDate.value !== "" && journalConcepts.value !== ""
             && journalEntry.value !== "" && journalMood.value !== "") {
-            fetch("http://localhost:8088/entries", { // Replace "url" with your API's URL
+            fetch("http://localhost:8088/entries", { 
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

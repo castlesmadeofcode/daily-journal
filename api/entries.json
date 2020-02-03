@@ -6,27 +6,6 @@
       "concept": "Array methods",
       "entry": "We learned about 4 different array methods today. forEach made sense, but the others still confuse me.",
       "mood": "Ok"
-    },
-    {
-      "date": "0222-02-22",
-      "concept": "works",
-      "entry": "works",
-      "mood": "Happy",
-      "id": 2
-    },
-    {
-      "date": "2222-02-22",
-      "concept": "works",
-      "entry": "works",
-      "mood": "Happy",
-      "id": 3
-    },
-    {
-      "date": "2222-02-22",
-      "concept": "2",
-      "entry": "2",
-      "mood": "Happy",
-      "id": 4
     }
   ]
 }
