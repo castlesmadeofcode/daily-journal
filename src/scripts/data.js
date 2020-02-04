@@ -1,35 +1,23 @@
 
 
-import makeJournal from "./entryComponent.js"
-
+const baseUrl = "http://localhost:8088"
 
 const API = {
     getJournalEntries() {
-        return fetch("http://localhost:8088/entries")
+        return fetch(`${baseUrl}/entries`)
             .then(response => response.json())
 
     },
-    saveJournalEntry() {
-        const newJournalEntry = makeJournal.makeJournalEntryObject(journalDate.value, journalConcepts.value, journalEntry.value, journalMood.value)
-        if (journalDate.value !== "" && journalConcepts.value !== ""
-            && journalEntry.value !== "" && journalMood.value !== "") {
-            fetch("http://localhost:8088/entries", { 
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(newJournalEntry)
-            })
-            location.reload();
-
-        }
-        else {
-            window.alert("fill out all the things!")
-        }
+    saveJournalEntry(newJournalEntry) {
+        return fetch(`${baseUrl}/entries`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newJournalEntry)
+        })
     }
 }
-
-
 
 
 
