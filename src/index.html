@@ -14,27 +14,33 @@
     <div class="flex-container">
         <form action="" id="journal">
             <fieldset>
-                <label for="journalDate">Date of entry</label>
+                <label for="journalDate">Date of entry: </label>
                 <input type="date" name="journalDate" id="journalDate">
             </fieldset>
             <fieldset>
-                <label for="journalConcepts">Concepts covered</label>
+                <label for="journalConcepts">Concepts covered: </label>
                 <input type="text" name="journalConcepts" id="journalConcepts">
             </fieldset>
             <fieldset>
-                <label for="journalEntry">Journal entry</label>
+                <label for="journalEntry">Journal entry: </label>
                 <textarea name="journalEntry" id="journalEntry" rows="3" cols="33"></textarea>
             </fieldset>
             <fieldset>
-                <label for="journalMood">Mood for the day</label>
+                <label for="journalMood">Mood for the day: </label>
                 <select name="journalMood" id="journalMood">
                     <option value = ""></option>
                     <option value="Happy">Happy</option>
                     <option value="Sad">Sad</option>
                     <option value="Meh">Meh</option>
-                    <option value="FILLED WITH FIERY RAGE">FILLED WITH FIERY RAGE</option>
                 </select>
             </fieldset>
+            <fieldset>
+                    <legend>Filter by mood: </legend>
+                    <label for="journalMood"></label>
+                    <input type="radio" name="mood" value="Happy"> Happy
+                    <input type="radio" name="mood" value="Sad"> Sad 
+                    <input type="radio" name="mood" value="Meh"> Meh
+                </fieldset>
             <input id="journalRecordEntry" type="button" value="Record Journal Entry">
 
 

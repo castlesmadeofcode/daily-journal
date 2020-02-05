@@ -17,10 +17,10 @@ const addJournalEventListener = () => {
 
     saveEntry.addEventListener("click", () => {
         const newJournalEntry = makeJournal.makeJournalEntryObject(journalDate.value, journalConcepts.value, journalEntry.value, journalMood.value)
-        console.log(journalDate.value)
-        console.log(journalConcepts.value)
-        console.log(journalEntry.value)
-        console.log(journalMood.value)
+        // console.log(journalDate.value)
+        // console.log(journalConcepts.value)
+        // console.log(journalEntry.value)
+        // console.log(journalMood.value)
 
         if (journalDate.value !== "" && journalConcepts.value !== ""
             && journalEntry.value !== "" && journalMood.value !== "") {
