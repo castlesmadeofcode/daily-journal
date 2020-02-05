@@ -8,6 +8,8 @@ const journalDate = document.getElementById("journalDate");
 const journalConcepts = document.getElementById("journalConcepts");
 const journalEntry = document.getElementById("journalEntry");
 const journalMood = document.getElementById("journalMood");
+const entryContainer = document.querySelector(".entryLog");
+
 
 
 const addJournalEventListener = () => {
@@ -15,14 +17,16 @@ const addJournalEventListener = () => {
 
     saveEntry.addEventListener("click", () => {
         const newJournalEntry = makeJournal.makeJournalEntryObject(journalDate.value, journalConcepts.value, journalEntry.value, journalMood.value)
-        // console.log(journalDate.value)
-        // console.log(journalConcepts.value)
-        // console.log(journalEntry.value)
-        // console.log(journalMood.value)
+        console.log(journalDate.value)
+        console.log(journalConcepts.value)
+        console.log(journalEntry.value)
+        console.log(journalMood.value)
 
         if (journalDate.value !== "" && journalConcepts.value !== ""
             && journalEntry.value !== "" && journalMood.value !== "") {
 
+            entryContainer.textContent = ""
+                
             API.saveJournalEntry(newJournalEntry)
                 .then(API.getJournalEntries)
                 .then(renderJournalEntries);
