@@ -1,32 +1,29 @@
 import API from "./data.js"
-import makeJournal from "./entryComponent.js"
 import renderJournalEntries from "./entriesDOM.js"
 
 const entryContainer = document.querySelector(".entryLog");
 let radioButtonByName = document.getElementsByName("mood");
 const showEntries = document.getElementById("showAllEntries");
 
-
-// show all journal entries button
-showEntries.addEventListener("click", () => {
+export default {
+    // show all journal entries button
+    showEntriesFunction: () => showEntries.addEventListener("click", () => {
         entryContainer.textContent = ""
         API.getJournalEntries()
-        .then(renderJournalEntries);
-})
+            .then(renderJournalEntries);
+    }),
 
-
-//filter by radio button
-radioButtonByName.forEach(button => {
-    button.addEventListener("click", () => {
-        let moodValue = button.value;
-        console.log(moodValue);
-
-        API.getJournalEntries()
-        .then( entries => {
-            let filteredEntries = entries.filter(entry => entry.mood === moodValue);
-            entryContainer.textContent = ""
-            renderJournalEntries(filteredEntries);
-        });
+    //filter by radio button
+    journalFilterFunction: () => radioButtonByName.forEach(button => {
+        button.addEventListener("click", () => {
+            let moodValue = button.value;
+            console.log(moodValue);
+            API.getJournalEntries()
+                .then(entries => {
+                    let filteredEntries = entries.filter(entry => entry.mood === moodValue);
+                    entryContainer.textContent = ""
+                    renderJournalEntries(filteredEntries);
+                });
+        })
     })
-    
-});
+}

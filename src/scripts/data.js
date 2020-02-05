@@ -16,6 +16,12 @@ const API = {
             },
             body: JSON.stringify(newJournalEntry)
         })
+    },
+    deleteEntry(entryId) {
+        console.log(entryId);
+        return fetch(`${baseUrl}/entries/${entryId}`, {
+            method: "DELETE"
+        })
     }
 }
 

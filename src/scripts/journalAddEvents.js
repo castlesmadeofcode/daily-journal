@@ -26,7 +26,7 @@ const addJournalEventListener = () => {
             && journalEntry.value !== "" && journalMood.value !== "") {
 
             entryContainer.textContent = ""
-                
+
             API.saveJournalEntry(newJournalEntry)
                 .then(API.getJournalEntries)
                 .then(renderJournalEntries);
