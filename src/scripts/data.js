@@ -1,42 +1,23 @@
 
 
-
-
-const makeJournalEntryObject = (date, concept, entry, mood) => ({
-    "date": date,
-    "concept": concept,
-    "entry": entry,
-    "mood": mood
-});
+const baseUrl = "http://localhost:8088"
 
 const API = {
     getJournalEntries() {
-        return fetch("http://localhost:8088/entries")
+        return fetch(`${baseUrl}/entries`)
             .then(response => response.json())
 
     },
-    saveJournalEntry() {
-        const newJournalEntry = makeJournalEntryObject(journalDate.value, journalConcepts.value, journalEntry.value, journalMood.value)
-       console.log(newJournalEntry)
-       if (journalDate.value !== "" && journalConcepts.value !== ""
-       && journalEntry.value !== "" && journalMood.value !== "") {
-        fetch("http://localhost:8088/entries", { // Replace "url" with your API's URL
-    method: "POST",
-    headers: {
-        "Content-Type": "application/json"
-    },
-    body: JSON.stringify(newJournalEntry)
-})
-  location.reload();
-
+    saveJournalEntry(newJournalEntry) {
+        return fetch(`${baseUrl}/entries`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newJournalEntry)
+        })
+    }
 }
-else {
-    window.alert("fill out all the things")
-}
-}
-}
-
-
 
 
 

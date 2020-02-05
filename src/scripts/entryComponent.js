@@ -1,5 +1,9 @@
 
-const makeJournalEntryComponent = (journalEntry) => {
+
+const makeJournal = {
+
+
+makeJournalEntryComponent (journalEntry) {
         return `
         <ul>
         <li>Date: ${journalEntry.date}</li>
@@ -8,9 +12,18 @@ const makeJournalEntryComponent = (journalEntry) => {
         <li>Mood: ${journalEntry.mood}</li>
         <ul>
     `
+},
+makeJournalEntryObject(date, concept, entry, mood) { 
+    return ({
+    "date": date,
+    "concept": concept,
+    "entry": entry,
+    "mood": mood
+})
+}
 };
 
 
 
 
-export default makeJournalEntryComponent
+export default makeJournal
