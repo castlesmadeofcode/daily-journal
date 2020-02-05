@@ -3,7 +3,7 @@
 const makeJournal = {
 
 
-makeJournalEntryComponent (journalEntry) {
+    makeJournalEntryComponent(journalEntry) {
         return `
         <ul>
         <li>Date: ${journalEntry.date}</li>
@@ -11,16 +11,18 @@ makeJournalEntryComponent (journalEntry) {
         <li>Entry: ${journalEntry.entry}</li>
         <li>Mood: ${journalEntry.mood}</li>
         <ul>
+        <button id="deleteEntry--${journalEntry.id}" class="deleteBtn">Delete</button>
+        </section>
     `
-},
-makeJournalEntryObject(date, concept, entry, mood) { 
-    return ({
-    "date": date,
-    "concept": concept,
-    "entry": entry,
-    "mood": mood
-})
-}
+    },
+    makeJournalEntryObject(date, concept, entry, mood) {
+        return ({
+            "date": date,
+            "concept": concept,
+            "entry": entry,
+            "mood": mood
+        })
+    }
 };
 
 
