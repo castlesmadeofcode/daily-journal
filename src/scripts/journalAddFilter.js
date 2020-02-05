@@ -22,13 +22,10 @@ radioButtonByName.forEach(button => {
         console.log(moodValue);
 
         API.getJournalEntries()
-        .then( function (entries) {
+        .then( entries => {
             let filteredEntries = entries.filter(entry => entry.mood === moodValue);
             entryContainer.textContent = ""
-            filteredEntries.forEach(entry => {
-            entryContainer.innerHTML += makeJournal.makeJournalEntryComponent(entry);
-              
-            });
+            renderJournalEntries(filteredEntries);
         });
     })
     
