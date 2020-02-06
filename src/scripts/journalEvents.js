@@ -3,10 +3,27 @@ import renderJournalEntries from "./entriesDOM.js"
 
 const journalList = document.querySelector(".entryLog")
 const entryContainer = document.querySelector(".entryLog");
+const hiddenJournalId = document.querySelector("#journalId")
 
+
+
+const updateFormFields = entryId => {
+
+    fetch(`http://localhost:8088/entries/${entryId}`)
+        .then(response => response.json())
+        .then(entry => {
+
+            hiddenJournalId.value = entry.id;
+            journalDate.value = entry.date;
+            journalConcepts.value = entry.concept;
+            journalEntry.value = entry.entry;
+            journalMood.value = entry.mood;
+
+        })
+}
 
 export default {
-    journalDeleteEvent: () => {
+    journalEvents: () => {
         journalList.addEventListener("click", (event) => {
 
             //starts with is a built in method
@@ -22,6 +39,13 @@ export default {
                     .then(renderJournalEntries);
 
             }
+            else if (event.target.id.startsWith("editEntry--")) {
+                const entryToEdit = event.target.id.split("--")[1];
+
+                updateFormFields(entryToEdit)
+
+            }
+
         })
     }
 }
