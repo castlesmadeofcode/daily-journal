@@ -17,6 +17,15 @@ const API = {
             body: JSON.stringify(newJournalEntry)
         })
     },
+    updateJournalEntry(entry) {
+        return fetch(`${baseUrl}/entries/${entry.id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(entry)
+        });
+    },
     deleteEntry(entryId) {
         console.log(entryId);
         return fetch(`${baseUrl}/entries/${entryId}`, {

@@ -12,6 +12,7 @@ const makeJournal = {
         <li>Mood: ${journalEntry.mood}</li>
         <ul>
         <button id="deleteEntry--${journalEntry.id}" class="deleteBtn">Delete</button>
+        <button id="editEntry--${journalEntry.id}"> Edit </button>
         </section>
     `
     },
