@@ -34,15 +34,21 @@
                     <option value="Meh">Meh</option>
                 </select>
             </fieldset>
+            <input id="journalRecordEntry" type="button" value="Record Journal Entry">
+            <input id="showAllEntries" type="button" value="Show All Entries">
+            <input type="hidden" id="journalId" value="" />
             <fieldset>
                     <legend>Filter by mood: </legend>
                     <input type="radio" name="mood" value="Happy"> Happy
                     <input type="radio" name="mood" value="Sad"> Sad 
                     <input type="radio" name="mood" value="Meh"> Meh
                 </fieldset>
-            <input id="journalRecordEntry" type="button" value="Record Journal Entry">
-            <input id="showAllEntries" type="button" value="Show All Entries">
-            <input type="hidden" id="journalId" value="" />
+                <fieldset>
+                        <legend>Search journal entries: </legend>
+                    <input type="text" id="searchEntries" placeholder="Search for names..">
+                </fieldset>
+
+
 
 
 

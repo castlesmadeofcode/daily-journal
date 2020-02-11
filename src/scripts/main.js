@@ -8,8 +8,9 @@ import journalEvents from "./journalEvents.js";
 
 API.getJournalEntries().then(renderJournalEntries);
 addJournalEventListener();
-journalAddFilter.journalFilterFunction()
-journalAddFilter.showEntriesFunction()
+journalAddFilter.journalFilterFunction();
+journalAddFilter.showEntriesFunction();
+journalAddFilter.searchEntriesFunction();
 journalEvents.journalEvents();
 
 
