@@ -17,7 +17,6 @@ export default {
     journalFilterFunction: () => radioButtonByName.forEach(button => {
         button.addEventListener("click", () => {
             let moodValue = button.value;
-            console.log(moodValue);
             API.getJournalEntries()
                 .then(entries => {
                     let filteredEntries = entries.filter(entry => entry.mood === moodValue);
