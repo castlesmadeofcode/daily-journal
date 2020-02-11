@@ -5,7 +5,28 @@
       "date": "07/24/2018",
       "concept": "Array methods",
       "entry": "We learned about 4 different array methods today. forEach made sense, but the others still confuse me.",
-      "mood": "Ok"
+      "mood": "Meh"
+    },
+    {
+      "date": "2020-02-06",
+      "concept": "UPDATE",
+      "entry": "WE GONE UPDATE UP IN HURRRR",
+      "mood": "Happy",
+      "id": 1
+    },
+    {
+      "date": "2020-02-06",
+      "concept": "works?",
+      "entry": "DO YOU STILL WORK",
+      "mood": "Meh",
+      "id": 4
+    },
+    {
+      "date": "2020-02-06",
+      "concept": "SAD",
+      "entry": "YOU SAD NOW",
+      "mood": "Sad",
+      "id": 5
     }
   ]
 }
